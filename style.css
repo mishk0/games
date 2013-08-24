@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 14px;
+    background:#1ABC9C;
+    font-family: Helvetica, Arial, sans-serif;
+}
+.wrapper {
+    padding-top: 100px;
+}
+.enter {
+    width: 300px;
+    background: #EDEFF1;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.enter input:focus {
+    outline:none;
+    border-color: #1ABC9C;
+}
+.playerName {
+    margin:0 0 10px;
+    position: relative;
+}
+.del {
+    display: none;
+    position: absolute;
+    right:10px;
+    top:8px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor:pointer;
+    color:#EC7063;
+}
+.playerName:hover .del {
+    display: block;
+}
+.playerName input {
+    border: 2px solid #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    width: 276px;
+    padding: 10px;
+    font-size: 14px;
+    color:#34495e;
+    margin: 0;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px 0;
+    margin: 0;
+    background: #58D68D;
+    font-size: 14px;
+    color:#fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border:none;
+    cursor:pointer;
+}
+
+.plus {
+    text-align: center;
+    cursor:pointer;
+    border-bottom: 1px solid #34495e;
+    color:#34495e;
+}
+
+.plusWrapper {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.giveCard {
+    text-align: center;
+    background: #F5D313;
+    color:#fff;
+    text-align: center;
+    padding: 10px;
+    display: block;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.giveCard.disabled {
+    background: #EDEFF1;
+    color:#34495e;
+    cursor:default;
+}
+
+.player {
+    vertical-align: top;
+    position: relative;
+    width: 200px;
+    display: inline-block;
+    *display: inline;
+    *zoom:1;
+    margin: 0 10px 50px;
+}
+
+.gameDesc {
+    text-align: center;
+    position: relative;
+}
+
+.cards {
+    width: 100px;
+    height: 150px;
+    line-height: 50px;
+    color:#EDEFF1;
+    font-size: 16px;
+    background:#3498DB;
+    border: 2px solid #58D68D;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 5px auto 10px;
+}
+
+.cardT {
+    color:#34495e;
+    position: relative;
+    width: 100px;
+    height: 150px;
+    background:#EDEFF1;
+    font-size: 16px;
+    border: 2px solid #58D68D;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 5px auto 10px;
+    margin-bottom: -120px;
+}
+.cardT.back {
+    background:#3498DB;
+}
+
+.cardT .suit {
+    font-size: 50px;
+    position: relative;
+    top:50px;
+    color:#34495e;
+}
+.suit.red {
+    color:#EC7063;
+}
+.cardNumTop {
+    position: absolute;
+    top:5px;
+    right:5px;
+}
+.cardNumBottom {
+    position: absolute;
+    left:5px;
+    bottom:5px;
+}
+.battleTitle {
+    background:#EC7063;
+    color:#fff;
+    font-size: 16px;
+    padding: 20px 0;
+    position: absolute;
+    left:0;
+    top:-70px;
+    width: 100%;
+}
+.loose {
+    opacity : 0.3;
+}
+.loose .giveCard, .loose .cardsOnTheTable {
+    display: none;
+}
+.error {
+    text-align: center;
+    padding-top: 10px;
+    display: none;
+    color:#EC7063;
+}
+
+h2 {
+    text-align: center;
+    font-size: 22px;
+    color:#34495e;
+}
+.subTit {
+    text-align: center;
+    font-size: 13px;
+    color:#34495e;
+}
+header {
+    margin-bottom: 15px;
+}
+
+.cardsOnTheTable {
+    position: relative;
+    min-height:200px;
+}
+
+.theEnd {
+    position: absolute;
+    width: 100%;
+    background: #EC7063;
+    color:#fff;
+    top:0px;
+    left:0;
+    padding: 50px 0;
+    font-size: 40px;
+    text-align: center;
+
+}
+.theEnd a {
+    color:#34495e;
+}
+.cardT.winnerCard {
+    background: #3ed650;
+}
+
+.autoplay {
+    text-align: center;
+    font-size: 13px;
+    margin-bottom: 10px;
+    color:#34495e;
+}

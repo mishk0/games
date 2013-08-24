@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>badBoy</title>
+    <meta content="text/html" charset="UTF-8">
+    <script src="jquery-1.9.1.min.js"></script>
+    <script src="http://underscorejs.org/underscore.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css"/>
+
+</head>
+<body>
+<div class="wrapper">
+    <div class="enter">
+        <header>
+        <h2>игра "Пьяница"</h2>
+        <div class="subTit">В игре могут участвовать от 2 до 6 игроков</div>
+        </header>
+        <div class="players">
+            <div class='playerName'><input type="text" placeholder="введите имя"/></div>
+            <div class='playerName'><input type="text" placeholder="введите имя"/></div>
+        </div>
+        <div class="plusWrapper"><span class="plus">+ добавить игрока</span></div>
+        <div class="autoplay"><label><input type="checkbox"/> автоигра</label></div>
+        <button class="btn">Старт!</button>
+        <div class="error">Введите имена всем игрокам</div>
+    </div>
+    <div class="gameDesc">
+
+    </div>
+</div>
+<script type="text/templ" id="player-tmpl">
+    <div class='player' data-id='id<%= id %>'>
+        <%= name %>
+        <div class="cards"><span class="cNum"><%= cardNum %></span> карт</div>
+        <span class='giveCard'>Сделать ход</span>
+        <div class="cardsOnTheTable"></div>
+    </div>
+</script>
+<script type="text/templ" id="card-tmpl">
+    <% if (battle) { %>
+    <div class="cardT back"></div>
+    <% } %>
+    <div class="cardT">
+        <span class="cardNumTop"><%=num %></span>
+        <%  if (suit == "a") { %>
+        <span class="suit red">♥</span>
+        <%  }
+        if (suit == "b") {   %>
+        <span class="suit red">♦</span>
+        <%  }
+        if (suit == "c") { %>
+        <span class="suit">♣</span>
+        <% }
+        if (suit == "d") { %>
+        <span class="suit">♠</span>
+        <% } %>
+        <span class="cardNumBottom"><%=num %></span>
+    </div>
+</script>
+</body>
+</html>
