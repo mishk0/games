@@ -79,7 +79,7 @@ Table.prototype = {
        });
 
    },
-   run : function(id){
+   run : function(id){   // процесс каждого хода
        var self = this;
        var giveAll = true;
         if (self.battleMode) {
@@ -102,12 +102,14 @@ Table.prototype = {
            this.battle();
        }
    },
-   battle : function(){
+   battle : function(){   // подсчет победителя
        var self = this;
 
        var cards = _.values(self.cardsForBattle);
-       console.log("cardOnTable: " + self.cardsOnTheTable);
-       console.log("cardsForBattle: " + cards);
+       if (window.console) {
+           console.log("cardOnTable: " + self.cardsOnTheTable);
+           console.log("cardsForBattle: " + cards);
+       }
        var maxCard;
        for (var i = 0; i<cards.length - 1; i++) {
            if (!maxCard) {
@@ -160,7 +162,7 @@ Table.prototype = {
 
 
    },
-    runEnd : function(winnerId){
+    runEnd : function(winnerId){  // конец хода
         this.cardsOnTheTable = [];
         this.cardsForBattle = {};
         this.battleMode = false;
@@ -225,7 +227,7 @@ $(function(){
     });
 
     $(document).on("click", ".giveCard", function(){
-        if ($(this).hasClass("disabled")) {
+        if ($(this).hasClass("disabled") || _autoplay) {
             return;
         }
         $(document).trigger({
