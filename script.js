@@ -27,12 +27,12 @@ Player.prototype = {
     }
 };
    var players = {};
-   var cards = [
-       "a2", "a3", "a4", "a5", "a6", "a7", "a8", "a9", "a10", "aJ", "aQ", "aK", "aI",
-       "b2", "b3", "b4", "b5", "b6", "b7", "b8", "b9", "b10", "bJ", "bQ", "bK", "bI",
-       "c2", "c3", "c4", "c5", "c6", "c7", "c8", "c9", "c10", "cJ", "cQ", "cK", "cI",
-       "d2", "d3", "d4", "d5", "d6", "d7", "d8", "d9", "d10", "dJ", "dQ", "dK", "dI"
-   ];
+    var cards = [
+        "a2", "a3", "a4", "a5", "a6", "a7", "a8", "a9", "a10", "aJ", "aQ", "aK", "aI",
+        "b2", "b3", "b4", "b5", "b6", "b7", "b8", "b9", "b10", "bJ", "bQ", "bK", "bI",
+        "c2", "c3", "c4", "c5", "c6", "c7", "c8", "c9", "c10", "cJ", "cQ", "cK", "cI",
+        "d2", "d3", "d4", "d5", "d6", "d7", "d8", "d9", "d10", "dJ", "dQ", "dK", "dI"
+    ];
 
    function compare(card1, card2) {
       var c1 = card1.slice(1);
@@ -285,12 +285,13 @@ $(function(){
     $(document).on("click", ".theEnd a", function(){
         $(".gameDesc").html("").hide();
         players = {};
-        $(".autoplay input").prop("ckecked", false);
+        $(".autoplay input").prop("checked", false);
         $(".players").html("<div class='playerName'><input type='text' placeholder='введите имя'/></div><div class='playerName'><input type='text' placeholder='введите имя'/></div>")
         $(".enter").fadeIn();
         return false;
     })
     $(document).on("theEnd", function(e){
+        _autoplay = false;
         $(".gameDesc").html("<div class='theEnd'>Победил игрок "+players[e.winner].name+". <a href='#'>Играть еще.</a></div>")
 
     })
